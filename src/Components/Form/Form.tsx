@@ -24,11 +24,11 @@ function Form({ onSubmit }: SubmitForm) {
             <label>
                 Choose a category:
                 <select name="selectedCategory" value={category} onChange={event => setCategory(event.target.value)}>
-                    <option value="10">General knowledge</option>
-                    <option value="22">Sports</option>
-                    <option value="24">History</option>
-                    <option value="26">Art</option>
-                    <option value="28">Animals</option>
+                    <option value="9">General knowledge</option>
+                    <option value="21">Sports</option>
+                    <option value="23">History</option>
+                    <option value="25">Art</option>
+                    <option value="27">Animals</option>
                 </select>
             </label>
             <label>
