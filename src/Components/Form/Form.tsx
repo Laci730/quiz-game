@@ -11,7 +11,7 @@ interface Data {
 
 function Form({ onSubmit }: SubmitForm) {
 
-    const [category, setCategory] = useState("10");
+    const [category, setCategory] = useState("9");
     const [difficulty, setDifficulty] = useState("easy");
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -25,9 +25,9 @@ function Form({ onSubmit }: SubmitForm) {
                 Choose a category:
                 <select name="selectedCategory" value={category} onChange={event => setCategory(event.target.value)}>
                     <option value="9">General knowledge</option>
+                    <option value="15">Video games</option>
                     <option value="21">Sports</option>
                     <option value="23">History</option>
-                    <option value="25">Art</option>
                     <option value="27">Animals</option>
                 </select>
             </label>
