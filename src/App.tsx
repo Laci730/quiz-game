@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './Styles/App.css';
 import Form from './Components/Form/Form';
 import Quiz from './Components/Quiz/Quiz';
 
@@ -16,13 +16,11 @@ function App() {
   return (
     <div className="App">
       {displayForm &&
-        <div className="container">
-          <h1>Quiz game</h1>
-          <Form onSubmit={handleSubmit} />
-        </div>
+        <Form onSubmit={handleSubmit} />
       }
       {!displayForm &&
-        <Quiz url={url} />}
+        <Quiz url={url} />
+      }
     </div>
   );
 }
