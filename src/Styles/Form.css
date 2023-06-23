@@ -1,0 +1,29 @@
+.title {
+    font-size: 72px;
+    font-weight: 400;
+    margin: 3rem;
+}
+
+.choose-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.category-form select,
+.difficulty-form select {
+    margin: 15px 10px;
+    cursor: pointer;
+}
+
+.choose-category button {
+    margin: 15px 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    width: 25%;
+    align-self: flex-end;
+    cursor: pointer;
+    user-select: none;
+}
