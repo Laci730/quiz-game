@@ -25,7 +25,6 @@ function useFetch(url: string) {
             return;
         }
 
-        setLoading(true);
         axios
             .get<QuizResponse>(url)
             .then(response => {
