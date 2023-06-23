@@ -16,10 +16,14 @@ function App() {
   return (
     <div className="App">
       {displayForm &&
-        <Form onSubmit={handleSubmit} />
+        <div className="container">
+          <Form onSubmit={handleSubmit} />
+        </div>
       }
       {!displayForm &&
-        <Quiz url={url} />
+        <div className="container">
+          <Quiz url={url} />
+        </div>
       }
     </div>
   );
