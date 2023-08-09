@@ -3,9 +3,10 @@
   width: 100dvw;
   display: grid;
   place-items: center;
+  background-color: rgb(52, 177, 255);
   }
   
-  .container {
+.container {
     width: 50%;
     height: 66dvh;
     display: flex;
@@ -15,4 +16,13 @@
     padding: 3rem;
     border-radius: 2rem;
     background-color: white;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100dvw;
+    height: 100dvh;
+    border-radius: 0px;
+    padding: 0px;
+    background-color: rgb(52, 177, 255);
+  }
 }
