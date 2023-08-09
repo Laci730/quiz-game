@@ -22,10 +22,14 @@ function Form({ onSubmit }: SubmitForm) {
 
     return (
         <>
-            <div className="title">Quiz game</div>
+            <section className="text">
+                <div className="title">Quiz game</div>
+                <h4 className="sub">Test your knowledge with a short quiz. <br />
+                    Choose your favorite topic and have fun!</h4>
+            </section>
             <form className="choose-category" method="post" onSubmit={handleSubmit}>
                 <label className="category-form">
-                    Choose a category:
+                    Category
                     <select name="selectedCategory" value={category} onChange={event => setCategory(event.target.value)}>
                         <option value="9">General knowledge</option>
                         <option value="15">Video games</option>
@@ -35,14 +39,14 @@ function Form({ onSubmit }: SubmitForm) {
                     </select>
                 </label>
                 <label className="difficulty-form">
-                    Choose a difficulty:
+                    Difficulty
                     <select name="selectedDifficulty" value={difficulty} onChange={event => setDifficulty(event.target.value)}>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
                     </select>
                 </label>
-                <button type="submit"> Start </button>
+                <button type="submit" className="start-btn"> Start </button>
             </form>
         </>
     )
