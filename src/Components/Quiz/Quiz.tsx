@@ -89,12 +89,12 @@ function Quiz({ url }: Props) {
                             handleClick={handleClick}
                         />
                     )}
-                    {clicked && <div className="next-button" onClick={() => setTimeout(nextQuestion, 50)}>next</div>}
+                    {clicked && <div className="next-button" onClick={() => nextQuestion()}>next</div>}
                 </div>
             }
             {gameOver &&
                 <div className="game-over">
-                    <h3>Score: {score} / 10</h3>
+                    <h3 className="score"> Score: {score} / 10 </h3>
                     <div className="restart-btn" onClick={() => window.location.reload()}> Play again </div>
                 </div>
             }
