@@ -1,13 +1,9 @@
-body {
-    background-color: rgb(52, 177, 255);
-}
-
 .quiz {
     width: 100%;
     height: 66dvh;
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: 1rem 10rem 2rem 2rem 4rem;
+    grid-template-rows: 1rem 10rem 3rem 3rem 4rem;
     place-items: center;
     row-gap: 1rem;
 }
@@ -41,7 +37,7 @@ body {
     border-radius: 0.5rem;
     font-weight: 600;
     width: 75%;
-    height: 2rem;
+    min-height: 3rem;
     display: grid;
     place-items: center;
     user-select: none;
@@ -79,10 +75,12 @@ body {
 
 .correct {
     border: 2px solid green;
+    color: green;
 }
 
 .wrong {
     border: 2px solid red;
+    color: red;
 }
 
 .next-button {
@@ -91,10 +89,84 @@ body {
     border: 2px solid black;
     border-radius: 0.5rem;
     font-weight: 600;
-    width: 75%;
     height: 2rem;
     display: grid;
     place-items: center;
     cursor: pointer;
     width: 40%;
+}
+
+.score {
+    text-align: center;
+}
+
+.restart-btn {
+    font-size: 14px;
+    margin: 15px 10px;
+    background-color: rgb(52, 177, 255);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 150px;
+    align-self: flex-end;
+    font-weight: 600;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 10px 16px #0e102c;
+}
+
+.restart-btn:hover {
+    background-color: lightgrey;
+}
+
+@media screen and (max-width: 1500px) {
+    .quiz {
+        grid-template-columns: 100%;
+        grid-template-rows: 1rem 10rem 3rem 3rem 3rem 3rem 4rem;
+    }
+
+    .answer:nth-child(3),
+    .disabled:nth-child(3) {
+        grid-row: 3 / 4;
+        grid-column: 1 / 1;
+    }
+
+    .answer:nth-child(4),
+    .disabled:nth-child(4) {
+        grid-row: 4 / 5;
+        grid-column: 1 / 1;
+    }
+
+    .answer:nth-child(5),
+    .disabled:nth-child(5) {
+        grid-row: 5 / 6;
+        grid-column: 1 / 1;
+    }
+
+    .answer:nth-child(6),
+    .disabled:nth-child(6) {
+        grid-row: 6 / 7;
+        grid-column: 1 / 1;
+    }
+
+    .next-button {
+        grid-row: 7 / 8;
+        grid-column: 1 / 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .quiz progress {
+        width: 75dvw;
+    }
+
+    .answer, .disabled, .next-button {
+        background-color: white;
+    }
+    
+    .restart-btn {
+        background-color: rgb(241, 241, 241);
+    }
 }
