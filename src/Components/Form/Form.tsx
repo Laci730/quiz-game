@@ -2,12 +2,7 @@ import { useState } from "react";
 import "../../Styles/Form.css"
 
 interface SubmitForm {
-    onSubmit: (data: Data) => void;
-}
-
-interface Data {
-    category: string;
-    difficulty: string;
+    onSubmit: (category: string, difficulty: string) => void;
 }
 
 function Form({ onSubmit }: SubmitForm) {
@@ -17,7 +12,7 @@ function Form({ onSubmit }: SubmitForm) {
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        onSubmit({ category, difficulty });
+        onSubmit(category, difficulty);
     }
 
     return (
