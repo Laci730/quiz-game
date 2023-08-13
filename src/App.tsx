@@ -8,8 +8,8 @@ function App() {
   const [url, setUrl] = useState("");
   const [displayForm, setDisplayForm] = useState(true);
 
-  function handleSubmit(data: { category: string, difficulty: string }) {
-    setUrl(`https://opentdb.com/api.php?amount=10&category=${data.category}&difficulty=${data.difficulty}&type=multiple&encode=base64`);
+  function handleSubmit(category: string, difficulty: string) {
+    setUrl(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple&encode=base64`);
     setDisplayForm(false);
   }
 
