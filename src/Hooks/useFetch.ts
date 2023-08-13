@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 interface QuizQuestion {
@@ -14,28 +14,19 @@ interface QuizResponse {
 
 function useFetch(url: string) {
     const [data, setData] = useState<QuizResponse>({ results: [] });
-    const [error, setError] = useState(null);
     const [loading, setLoading] = useState<boolean>(true);
 
-    const initialRender = useRef(true);
-
     useEffect(() => {
-        if (initialRender.current) {
-            initialRender.current = false;
-            return;
-        }
-
         axios
             .get<QuizResponse>(url)
             .then(response => {
                 setData(response.data);
-                setError(null);
             })
-            .catch(err => setError(err))
+            .catch(() => console.log("Fetch error"))
             .finally(() => setLoading(false));
     }, [url]);
 
-    return { data, error, loading };
+    return { data, loading };
 }
 
 export default useFetch;
