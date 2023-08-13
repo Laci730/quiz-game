@@ -117,7 +117,7 @@
 }
 
 .restart-btn:hover {
-    background-color: lightgrey;
+    background-color: rgb(26, 162, 247);
 }
 
 @media screen and (max-width: 1500px) {
