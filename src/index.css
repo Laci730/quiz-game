@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes icon-appear {
+    from {
+        display: none;
+        margin-left: 1rem;
+        transition: 300ms linear;
+    }
+    to {
+        display: flex;
+        margin-left: 0px;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.my-icon {
+    display: flex;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    animation-name: icon-appear;
+    animation-duration: 200ms;
+}
+
+.my-correct {
+    background-color: #16a34a;
+}
+
+.my-wrong {
+    background-color: #dc2626;
 }
