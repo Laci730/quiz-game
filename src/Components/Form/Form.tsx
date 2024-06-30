@@ -1,9 +1,6 @@
 import { useState } from "react";
-import "../../Styles/Form.css"
-
-interface SubmitForm {
-    onSubmit: (category: string, difficulty: string) => void;
-}
+import { SubmitForm } from "../../model/types";
+import Button from "../Button/Button";
 
 function Form({ onSubmit }: SubmitForm) {
 
@@ -16,34 +13,40 @@ function Form({ onSubmit }: SubmitForm) {
     }
 
     return (
-        <>
-            <section className="text">
-                <div className="title">Quiz game</div>
-                <h4 className="sub">Test your knowledge with a short quiz. <br />
+        <div className="w-full flex flex-col items-center justify-center max-w-4xl min-h-xl bg-stone-200 p-12 rounded-lg">
+            <section className="">
+                <div className="text-center font-bold text-2xl my-4">Quiz game</div>
+                <h4 className="text-center text-lg my-4">Test your knowledge with a short quiz. <br />
                     Choose your favorite topic and have fun!</h4>
             </section>
-            <form className="choose-category" method="post" onSubmit={handleSubmit}>
-                <label className="category-form">
-                    Category
-                    <select name="selectedCategory" value={category} onChange={event => setCategory(event.target.value)}>
+            <form className="flex flex-col justify-center items-center" onSubmit={handleSubmit}>
+                <div className="flex flex-col my-4 w-full">
+                    <label className="text-center mb-2">
+                        Category
+                    </label>
+                    <select className="border-2 border-gray-300 rounded-md cursor-pointer" 
+                        value={category} onChange={event => setCategory(event.target.value)}>
                         <option value="9">General knowledge</option>
                         <option value="15">Video games</option>
                         <option value="21">Sports</option>
                         <option value="23">History</option>
                         <option value="27">Animals</option>
                     </select>
-                </label>
-                <label className="difficulty-form">
-                    Difficulty
-                    <select name="selectedDifficulty" value={difficulty} onChange={event => setDifficulty(event.target.value)}>
+                </div>
+                <div className="flex flex-col my-4 w-full">
+                    <label className="text-center mb-2">
+                        Difficulty
+                    </label>
+                    <select className="border-2 border-gray-300 rounded-md cursor-pointer"
+                        value={difficulty} onChange={event => setDifficulty(event.target.value)}>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
                     </select>
-                </label>
-                <button type="submit" className="start-btn"> Start </button>
+                </div>
+                <Button type="submit" text="Start" className="my-4"/>
             </form>
-        </>
+        </div>
     )
 }
 

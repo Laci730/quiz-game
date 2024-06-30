@@ -1,29 +1,26 @@
 import { useState } from 'react';
-import './Styles/App.css';
 import Form from './Components/Form/Form';
 import Quiz from './Components/Quiz/Quiz';
 
 function App() {
 
   const [url, setUrl] = useState("");
-  const [displayForm, setDisplayForm] = useState(true);
+  const [started, setStarted] = useState(false);
 
   function handleSubmit(category: string, difficulty: string) {
     setUrl(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple&encode=base64`);
-    setDisplayForm(false);
+    setStarted(true);
   }
 
   return (
-    <div className="App">
-      {displayForm &&
-        <div className="container">
+    <div className="h-dvh w-full bg-stone-200 md:bg-white flex flex-col items-center justify-center">
+      {
+        !started &&
           <Form onSubmit={handleSubmit} />
-        </div>
       }
-      {!displayForm &&
-        <div className="container">
+      {
+        started &&
           <Quiz url={url} />
-        </div>
       }
     </div>
   );
