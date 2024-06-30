@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-interface QuizQuestion {
-    question: string;
-    correct_answer: string;
-    incorrect_answers: string[];
-}
-
-interface QuizResponse {
-    results: QuizQuestion[];
-}
-
+import { QuizResponse } from "../model/types";
 
 function useFetch(url: string) {
     const [data, setData] = useState<QuizResponse>({ results: [] });
