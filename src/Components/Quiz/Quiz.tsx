@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import useFetch from "../../Hooks/useFetch";
 import base64 from "base-64";
 import utf8 from "utf8";
-import "../../Styles/Quiz.css"
 import GameOver from "../GameOver/GameOver";
 import QuestionPanel from "../QuestionPanel/QuestionPanel";
 import { trio } from "ldrs";
